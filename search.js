@@ -20,14 +20,18 @@
 // }
 // matchFinder('hello', 'llo');
 
-function compareSubstring(string1, start1, end1, string2) {
-    const substring1 = string1.slice(start1, end1);
-    return substring1 === string2;
-  }
-  
-  const string1 = "abcdefgh";
-  const string2 = "bcd";
-  
-  const result = compareSubstring(string1, 1, 4, string2);
+function compareSubstring(string1, string2) {
+    if (typeof string1 !== 'string' || typeof string2 !== 'string') {
+      return 'Please insert a valid string'
+    }
+    else {
+      if (string1.includes(string2)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  } 
+  const result = compareSubstring('abcde', 'abc');
   console.log(result);  // This will output: true
   
